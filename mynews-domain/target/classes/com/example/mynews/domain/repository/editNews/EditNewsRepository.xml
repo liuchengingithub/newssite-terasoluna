@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mynews.domain.repository.editNews.EditNewsRepository">
+    <resultMap id="NewsInfoResultMap" type="News">
+        <id property="newsId" column="news_id"/>
+        <result property="newsTitle" column="news_title"/>
+        <result property="newsContent" column="news_content"/>
+        <result property="newsAuthor" column="news_author"/>
+        <result property="newsPostDate" column="news_post_date" javaType="org.joda.time.DateTime" typeHandler="com.example.mynews.domain.repository.editNews.DateTimeTypeHandler"/>
+        <result property="newsCategory" column="news_category"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="News" useGeneratedKeys="true" keyProperty="newsId">
+        <selectKey keyProperty="newsId" resultType="String" order="BEFORE">
+            select TO_CHAR(nextval('news_no_seq'),'FM0000') AS newsId
+        </selectKey>
+        insert into
+        news
+        (
+        news_id,
+        news_title,
+        news_content,
+        news_author,
+        news_post_date,
+        news_category
+        )
+        values
+        (
+         #{newsId},
+         #{newsTitle},
+         #{newsContent},
+         #{newsAuthor},
+         #{newsPostDate},
+         #{newsCategory}
+        )
+
+    </insert>
+    <update id="update" parameterType="News">
+        update news
+        set
+        news_title = #{newsTitle},
+        news_author = #{newsAuthor},
+        news_category = #{newsCategory},
+        news_content = #{newsContent}
+        where news_id = #{newsId}
+    </update>
+    <delete id="delete" parameterType="News">
+        delete from
+        news
+        where news_id = #{newsId}
+    </delete>
+</mapper>

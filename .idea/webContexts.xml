@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/mynews-web/src/main/webapp/WEB-INF/views/layout/header.jsp" value="file://$PROJECT_DIR$/mynews-web/src/main/webapp/WEB-INF/views/layout" />
+        <entry key="file://$PROJECT_DIR$/mynews-web/src/main/webapp/WEB-INF/views/newsEdit/addNews.jsp" value="file://$PROJECT_DIR$/mynews-web/src/main/webapp/WEB-INF/views/newsEdit" />
+        <entry key="file://$PROJECT_DIR$/mynews-web/src/main/webapp/WEB-INF/views/newsEdit/editNews.jsp" value="file://$PROJECT_DIR$/mynews-web/src/main/webapp/WEB-INF/views/newsEdit" />
+        <entry key="file://$PROJECT_DIR$/mynews-web/src/main/webapp/WEB-INF/views/welcome/home.jsp" value="file://$PROJECT_DIR$/mynews-web/src/main/webapp/WEB-INF/views/welcome" />
+      </map>
+    </option>
+  </component>
+</project>
